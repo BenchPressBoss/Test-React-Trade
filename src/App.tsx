@@ -6,8 +6,8 @@ import NotFound from '@components/screens/not-found/NotFound'
 
 import Trade from './components/screens/trade/Trade'
 import { AuthProvider } from './context/AuthProvider'
-import { routeConfig } from './routes/PageRoutesConfig'
-import { ProtectedRoutes } from './routes/ProtectedRoute'
+import { routeConfig } from './context/routes/PageRoutesConfig'
+import { ProtectedRoutes } from './context/routes/ProtectedRoute'
 
 function App() {
 	return (

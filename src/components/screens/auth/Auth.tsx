@@ -1,4 +1,4 @@
-import { routeConfig } from '@routes/PageRoutesConfig'
+import { routeConfig } from 'context/routes/PageRoutesConfig'
 import { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
