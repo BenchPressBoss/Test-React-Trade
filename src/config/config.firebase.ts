@@ -1,10 +1,8 @@
-// Import the necessary functions from Firebase SDK
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore, serverTimestamp } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
-// Your Firebase configuration
 const firebaseConfig = {
 	apiKey: 'AIzaSyB-J2cEEd_EJgCezsD8S5o9O6laiIp76xw',
 	authDomain: 'test-react-trade-c1070.firebaseapp.com',
