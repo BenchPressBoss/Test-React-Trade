@@ -1,3 +1,4 @@
+import styles from './Register.module.scss'
 import { useRegister } from '@/hooks/useRegister'
 
 export function Register() {
@@ -10,11 +11,10 @@ export function Register() {
 		error
 	} = useRegister()
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<h2>Register</h2>
 			<form onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor='email'>Email</label>
+				<div className={styles.inputBlock}>
 					<input
 						type='email'
 						id='email'
@@ -23,8 +23,7 @@ export function Register() {
 						required
 					/>
 				</div>
-				<div>
-					<label htmlFor='password'>Password</label>
+				<div className={styles.inputBlock}>
 					<input
 						type='password'
 						id='password'
@@ -33,8 +32,7 @@ export function Register() {
 						required
 					/>
 				</div>
-				<div>
-					<label htmlFor='confirmPassword'>Confirm Password</label>
+				<div className={styles.inputBlock}>
 					<input
 						type='password'
 						id='confirmPassword'

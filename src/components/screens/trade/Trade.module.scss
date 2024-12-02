@@ -1,39 +1,49 @@
-.paymentTerms {
-	margin: 20px 0;
-	width: 1500px;
-	border-collapse: collapse;
-	text-align: left;
-	font-family: Arial, sans-serif;
+.userBlock {
+	padding: 20px;
 }
 
-.paymentTerms th,
-.paymentTerms td {
-	padding: 8px 12px;
-	border: 1px solid #ddd;
-}
+.tradeBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+	.paymentTerms {
+		margin: 20px 0;
+		width: 1500px;
+		border-collapse: collapse;
+		text-align: left;
+		font-family: Arial, sans-serif;
+	}
 
-.paymentTerms thead th {
-	background-color: #f5f5f5;
-	color: #555;
-	font-weight: bold;
-	text-align: center;
-}
+	.paymentTerms th,
+	.paymentTerms td {
+		padding: 8px 12px;
+		border: 1px solid #ddd;
+	}
 
-.paymentTerms tbody td {
-	text-align: center;
-}
+	.paymentTerms thead th {
+		background-color: #f5f5f5;
+		color: #555;
+		font-weight: bold;
+		text-align: center;
+	}
 
-.blueText {
-	color: blue;
-	font-weight: bold;
-}
+	.paymentTerms tbody td {
+		text-align: center;
+	}
 
-.redText {
-	color: red;
-	font-weight: bold;
-}
+	.blueText {
+		color: blue;
+		font-weight: bold;
+	}
 
-.greenText {
-	color: green;
-	font-weight: bold;
+	.redText {
+		color: red;
+		font-weight: bold;
+	}
+
+	.greenText {
+		color: green;
+		font-weight: bold;
+	}
 }

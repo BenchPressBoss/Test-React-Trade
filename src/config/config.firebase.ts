@@ -1,9 +1,10 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
+import { getDatabase } from 'firebase/database'
 import { getFirestore, serverTimestamp } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
-const firebaseConfig = {
+export const firebaseConfig = {
 	apiKey: 'AIzaSyB-J2cEEd_EJgCezsD8S5o9O6laiIp76xw',
 	authDomain: 'test-react-trade-c1070.firebaseapp.com',
 	databaseURL: 'https://test-react-trade-c1070-default-rtdb.firebaseio.com',
@@ -20,3 +21,4 @@ export const timestamp = serverTimestamp
 export const firestoreApp = getFirestore(app)
 export const storageApp = getStorage(app)
 export const authApp = getAuth(app)
+export const databaseApp = getDatabase(app)

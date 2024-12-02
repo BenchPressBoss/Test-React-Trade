@@ -1,14 +1,14 @@
+import styles from './Login.module.scss'
 import { useLogin } from '@/hooks/useLogin'
 
 export const Login = () => {
 	const { isPending, error, emailRef, passwordRef, handleSubmit } = useLogin()
 
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<h2>Login</h2>
-			<form onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor='email'>Email</label>
+			<form onSubmit={handleSubmit} className={styles.form}>
+				<div className={styles.inputBlock}>
 					<input
 						type='email'
 						id='email'
@@ -17,8 +17,7 @@ export const Login = () => {
 						required
 					/>
 				</div>
-				<div>
-					<label htmlFor='password'>Password</label>
+				<div className={styles.inputBlock}>
 					<input
 						type='password'
 						id='password'
