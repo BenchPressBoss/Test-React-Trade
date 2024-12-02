@@ -1,9 +1,10 @@
 class pageRoutesConfig {
-	login = '/login'
-	register = '/register'
-	tradeAdmin = '/trade/admin'
-	tradeParticipant = '/trade/participant'
-	notFound = '/notFound'
+	readonly home: string = '/'
+	readonly login: string = '/login'
+	readonly register: string = '/register'
+	readonly tradeAdmin: string = '/trade/admin'
+	readonly tradeParticipant: string = '/trade/participant'
+	readonly notFound: string = '/notFound'
 
 	publicRoutes = [this.login, this.register]
 }

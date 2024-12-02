@@ -1,0 +1,49 @@
+.userBlock {
+	padding: 20px;
+}
+
+.tradeBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+	.paymentTerms {
+		margin: 20px 0;
+		width: 1500px;
+		border-collapse: collapse;
+		text-align: left;
+		font-family: Arial, sans-serif;
+	}
+
+	.paymentTerms th,
+	.paymentTerms td {
+		padding: 8px 12px;
+		border: 1px solid #ddd;
+	}
+
+	.paymentTerms thead th {
+		background-color: #f5f5f5;
+		color: #555;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.paymentTerms tbody td {
+		text-align: center;
+	}
+
+	.blueText {
+		color: blue;
+		font-weight: bold;
+	}
+
+	.redText {
+		color: red;
+		font-weight: bold;
+	}
+
+	.greenText {
+		color: green;
+		font-weight: bold;
+	}
+}

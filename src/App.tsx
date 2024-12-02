@@ -1,45 +1,36 @@
+import { AuthContext, AuthContextType } from '@context/AuthContext'
+import { routeConfig } from '@routes/PageRoutesConfig'
+import { ProtectedRoutes } from '@routes/ProtectedRoute'
+import { useContext } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
-import { Login } from '@components/screens/auth/login/Login'
-import { Register } from '@components/screens/auth/register/Register'
-import NotFound from '@components/screens/not-found/NotFound'
+import { Login } from '@screens/auth/login/Login'
+import { Register } from '@screens/auth/register/Register'
+import Home from '@screens/home/Home'
+import NotFound from '@screens/not-found/NotFound'
+import Trade from '@screens/trade/Trade'
 
-import Trade from './components/screens/trade/Trade'
-import { AuthProvider } from './context/AuthProvider'
-import { routeConfig } from './routes/PageRoutesConfig'
-import { ProtectedRoutes } from './routes/ProtectedRoute'
+export const App = () => {
+	const { currentUser } = useContext<AuthContextType | null>(AuthContext)
 
-function App() {
 	return (
-		<AuthProvider>
-			<Router>
-				<Routes>
-					<Route
-						path={routeConfig.tradeAdmin}
-						element={
-							<ProtectedRoutes isAuthenticated={true}>
-								<Trade isAdmin={true} />
-							</ProtectedRoutes>
-						}
-					/>
+		<Router>
+			<Routes>
+				<Route
+					path={routeConfig.tradeParticipant}
+					element={
+						<ProtectedRoutes isAuthenticated={currentUser}>
+							<Trade />
+						</ProtectedRoutes>
+					}
+				/>
+				<Route path={routeConfig.home} element={<Home />} />
 
-					<Route
-						path={routeConfig.tradeParticipant}
-						element={
-							<ProtectedRoutes isAuthenticated={true}>
-								<Trade isAdmin={false} />
-							</ProtectedRoutes>
-						}
-					/>
+				<Route path={routeConfig.login} element={<Login />} />
+				<Route path={routeConfig.register} element={<Register />} />
 
-					<Route path={routeConfig.login} element={<Login />} />
-					<Route path={routeConfig.register} element={<Register />} />
-
-					<Route path='*' element={<NotFound />} />
-				</Routes>
-			</Router>
-		</AuthProvider>
+				<Route path='*' element={<NotFound />} />
+			</Routes>
+		</Router>
 	)
 }
-
-export default App

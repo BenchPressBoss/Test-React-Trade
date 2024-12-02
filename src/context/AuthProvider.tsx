@@ -1,20 +1,20 @@
+import { authApp } from '@config/config.firebase'
 import {
+	User,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
 	signOut
 } from 'firebase/auth'
 import { useEffect, useState } from 'react'
 
-import { authApp } from '../config/config.firebase'
-
 import { AuthContext } from './AuthContext'
 
 interface AuthProviderProps {
 	children: React.ReactNode
 }
-export function AuthProvider({ children }: AuthProviderProps) {
-	const [currentUser, setCurrentUser] = useState(null)
-	const [isPending, setIsPending] = useState(true)
+export const AuthProvider = ({ children }: AuthProviderProps) => {
+	const [currentUser, setCurrentUser] = useState<User | null>(null)
+	const [isPending, setIsPending] = useState<boolean>(true)
 
 	const login = (email: string, password: string) => {
 		return signInWithEmailAndPassword(authApp, email, password)
